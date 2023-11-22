@@ -8,12 +8,13 @@ import (
 	"net/url" 
 )
 
+var sydneyURL = os.Getenv("SYDNEY_PROXY_DM")
+
 func Sydney(w http.ResponseWriter, r *http.Request) {
 	if !helper.CheckAuth(r) {
 		helper.UnauthorizedResult(w)
 		return
 	}
-	sydneyURL := os.Getenv("SYDNEY_PROXY_DM")
 	if sydneyURL == "" {
 		sydneyURL = common.BING_SYDNEY_URL.String()
 	}
