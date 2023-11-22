@@ -316,7 +316,6 @@ func getRandCookie(req *http.Request) (int, string) {
 	randIndex := rng.Intn(len(USER_TOKEN_LIST))
 	return randIndex, USER_TOKEN_LIST[randIndex]
 }
-
 func replaceResBody(originalBody string, originalScheme string, originalHost string) string {
 	modifiedBodyStr := originalBody
 
@@ -324,16 +323,25 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		if strings.Contains(modifiedBodyStr, BING_URL.Host) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_URL.Host, originalHost)
 		}
+		if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.Host) {
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
+		}
 	} else {
 		originalDomain := fmt.Sprintf("%s://%s", originalScheme, originalHost)
 		if strings.Contains(modifiedBodyStr, BING_URL.String()) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_URL.String(), originalDomain)
+		}
+		if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.String()) {
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.String(), originalDomain)
 		}
 	}
 
 	// 对话暂时支持国内网络，而且 Vercel 还不支持 Websocket ，先不用
 	if strings.Contains(modifiedBodyStr, BING_URL.Host) {
 		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_URL.Host, originalHost)
+	}
+	if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.Host) {
+		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
 	}
 
 	// if strings.Contains(modifiedBodyStr, "https://www.bingapis.com") {
