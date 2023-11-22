@@ -14,7 +14,7 @@ func Sydney(w http.ResponseWriter, r *http.Request) {
 	}
 	sydneyURL := os.Getenv("SYDNEY_PROXY_DM")
 	if sydneyURL == "" {
-		sydneyURL = common.BING_SYDNEY_URL
+		sydneyURL = common.BING_SYDNEY_URL.String()
 	}
 	url, _ := url.Parse(sydneyURL)
 	common.NewSingleHostReverseProxy(url).ServeHTTP(w, r)
