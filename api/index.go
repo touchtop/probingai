@@ -9,7 +9,7 @@ import (
 	"net/url" 
 )
 
-var bingURL := os.Getenv("BING_PROXY_DM")
+var bingURL = os.Getenv("BING_PROXY_DM")
 
 func Index(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/" {
