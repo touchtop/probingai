@@ -23,6 +23,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	if bingURL == "" {
 		bingURL = common.BING_URL
 	}
-	common.NewSingleHostReverseProxy(bingURL).ServeHTTP(w, r)
+	url, _ := url.Parse(bingURL)
+	common.NewSingleHostReverseProxy(url).ServeHTTP(w, r)
 }
 
