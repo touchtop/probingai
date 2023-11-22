@@ -18,4 +18,3 @@ func Sydney(w http.ResponseWriter, r *http.Request) {
 	}
 	common.NewSingleHostReverseProxy(sydneyURL).ServeHTTP(w, r)
 }
-}
