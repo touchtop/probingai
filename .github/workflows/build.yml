@@ -20,13 +20,7 @@ jobs:
         with:
           node-version: 18.17.0
 
-      - name: Build Frontend
-        run: |
-          rm -r web/* && git checkout web/web.go
-          cd frontend
-          npm install
-          npm run build
-          cd ..
+   
 
 
 
