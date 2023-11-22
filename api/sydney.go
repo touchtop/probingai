@@ -11,5 +11,10 @@ func Sydney(w http.ResponseWriter, r *http.Request) {
 		helper.UnauthorizedResult(w)
 		return
 	}
-	common.NewSingleHostReverseProxy(common.BING_SYDNEY_URL).ServeHTTP(w, r)
+	sydneyURL := os.Getenv("SYDNEY_PROXY_DM")
+	if sydneyURL == "" {
+		sydneyURL = common.BING_SYDNEY_URL
+	}
+	common.NewSingleHostReverseProxy(sydneyURL).ServeHTTP(w, r)
+}
 }
