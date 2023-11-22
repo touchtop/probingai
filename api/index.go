@@ -9,6 +9,8 @@ import (
 	"net/url" 
 )
 
+var bingURL := os.Getenv("BING_PROXY_DM")
+
 func Index(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/" {
 		http.Redirect(w, r, common.PROXY_WEB_PAGE_PATH, http.StatusFound)
@@ -20,7 +22,6 @@ func Index(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	bingURL := os.Getenv("BING_PROXY_DM")
 	if bingURL == "" {
 		bingURL = common.BING_URL.String()
 	}
