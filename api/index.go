@@ -5,6 +5,7 @@ import (
 	"adams549659584/go-proxy-bingai/common"
 	"net/http"
 	"strings"
+	"os"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
