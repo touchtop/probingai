@@ -3,6 +3,12 @@ on:
   push:
     tags:
       - v*
+   workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'World
 
 jobs:
   build:
