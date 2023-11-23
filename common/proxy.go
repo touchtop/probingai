@@ -64,8 +64,6 @@ var (
 	PROXY_WEB_PREFIX_PATH           = "/web/"
 	PROXY_WEB_PAGE_PATH             = PROXY_WEB_PREFIX_PATH + "index.html"
 
-)
-
 	if os.Getenv("BING_PROXY_DM") == "" {
     bingURL, _ = url.Parse(BING_URL.String())
 	} else {
@@ -77,6 +75,9 @@ var (
 	} else {
     sydneyURL, _ = url.Parse(os.Getenv("SYDNEY_PROXY_DM"))
 	}
+)
+
+
 
 func NewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 	originalScheme := "http"
