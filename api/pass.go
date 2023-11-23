@@ -1,7 +1,7 @@
 package api
 
 import (
-	"adams549659584/go-proxy-bingai/api/helper"
+	"jokyo3/probingai/api/helper"
 	"bytes"
 	"encoding/json"
 	"io"
