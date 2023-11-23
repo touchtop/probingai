@@ -65,8 +65,8 @@ var (
 	PROXY_WEB_PAGE_PATH             = PROXY_WEB_PREFIX_PATH + "index.html"
 )
 
-var bingURL, _ = url.Parse(os.Getenv("BING_PROXY_DM") ||= BING_URL.String())
-var sydneyURL, _ = url.Parse(os.Getenv("SYDNEY_PROXY_DM") ||= BING_SYDNEY_URL.String())
+var bingURL, _ = url.Parse(os.Getenv("BING_PROXY_DM") || BING_URL.String())
+var sydneyURL, _ = url.Parse(os.Getenv("SYDNEY_PROXY_DM") || BING_SYDNEY_URL.String())
 
 func NewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 	originalScheme := "http"
