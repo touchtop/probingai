@@ -63,10 +63,20 @@ var (
 	RAND_IP_COOKIE_NAME             = "BingAI_Rand_IP"
 	PROXY_WEB_PREFIX_PATH           = "/web/"
 	PROXY_WEB_PAGE_PATH             = PROXY_WEB_PREFIX_PATH + "index.html"
+
+	if os.Getenv("BING_PROXY_DM") == "" {
+    bingURL, _ = url.Parse(BING_URL.String())
+	} else {
+    bingURL, _ = url.Parse(os.Getenv("BING_PROXY_DM"))
+	}
+	if os.Getenv("SYDNEY_PROXY_DM") == "" {
+    sydneyURL, _ = url.Parse(BING_SYDNEY_URL.String())
+	} else {
+    sydneyURL, _ = url.Parse(os.Getenv("SYDNEY_PROXY_DM"))
+	}
+
 )
 
-var bingURL, _ = url.Parse(os.Getenv("BING_PROXY_DM") || BING_URL.String())
-var sydneyURL, _ = url.Parse(os.Getenv("SYDNEY_PROXY_DM") || BING_SYDNEY_URL.String())
 
 func NewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 	originalScheme := "http"
