@@ -346,10 +346,10 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		}
 		
 		if strings.Contains(modifiedBodyStr, bingURL.Host) {
-			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, bingURL.Host, originalHost)
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
 		}
 		if strings.Contains(modifiedBodyStr, sydneyURL.Host) {
-			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, sydneyURL.Host, originalHost)
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
 		}
 	} else {
 		originalDomain := fmt.Sprintf("%s://%s", originalScheme, originalHost)
@@ -360,10 +360,10 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.String(), originalDomain)
 		}
 		if strings.Contains(modifiedBodyStr, bingURL.String()) {
-			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, bingURL.String(), originalDomain)
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.String(), originalDomain)
 		}
 		if strings.Contains(modifiedBodyStr, sydneyURL.String()) {
-			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, sydneyURL.String(), originalDomain)
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.String(), originalDomain)
 		}
 	}
 
@@ -375,10 +375,10 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
 	}
 	if strings.Contains(modifiedBodyStr, bingURL.Host) {
-		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, bingURL.Host, originalHost)
+		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
 	}
 	if strings.Contains(modifiedBodyStr, sydneyURL.Host) {
-		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, sydneyURL.Host, originalHost)
+		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
 	}
 
 	// if strings.Contains(modifiedBodyStr, "https://www.bingapis.com") {
