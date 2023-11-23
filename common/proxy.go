@@ -14,6 +14,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"os"
 
 	"github.com/andybalholm/brotli"
 	utls "github.com/refraction-networking/utls"
@@ -63,6 +64,9 @@ var (
 	PROXY_WEB_PREFIX_PATH           = "/web/"
 	PROXY_WEB_PAGE_PATH             = PROXY_WEB_PREFIX_PATH + "index.html"
 )
+
+var bingURL, _ = url.Parse(os.Getenv("BING_PROXY_DM") ??= common.BING_URL.String())
+var sydneyURL, _ = url.Parse(os.Getenv("SYDNEY_PROXY_DM") ??= common.BING_SYDNEY_URL.String())
 
 func NewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 	originalScheme := "http"
@@ -326,6 +330,13 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.Host) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
 		}
+		
+		if strings.Contains(modifiedBodyStr, bingURL.Host) {
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, bingURL.Host, originalHost)
+		}
+		if strings.Contains(modifiedBodyStr, sydneyURL.Host) {
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, sydneyURL.Host, originalHost)
+		}
 	} else {
 		originalDomain := fmt.Sprintf("%s://%s", originalScheme, originalHost)
 		if strings.Contains(modifiedBodyStr, BING_URL.String()) {
@@ -333,6 +344,12 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		}
 		if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.String()) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.String(), originalDomain)
+		}
+		if strings.Contains(modifiedBodyStr, bingURL.String()) {
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, bingURL.String(), originalDomain)
+		}
+		if strings.Contains(modifiedBodyStr, sydneyURL.String()) {
+			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, sydneyURL.String(), originalDomain)
 		}
 	}
 
@@ -342,6 +359,12 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 	}
 	if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.Host) {
 		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
+	}
+	if strings.Contains(modifiedBodyStr, bingURL.Host) {
+		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, bingURL.Host, originalHost)
+	}
+	if strings.Contains(modifiedBodyStr, sydneyURL.Host) {
+		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, sydneyURL.Host, originalHost)
 	}
 
 	// if strings.Contains(modifiedBodyStr, "https://www.bingapis.com") {
