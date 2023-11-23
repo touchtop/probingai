@@ -10,6 +10,10 @@ import (
 )
 
 //var bingURL = os.Getenv("BING_PROXY_DM")
+//	if bingURL == "" {
+//		bingURL = common.BING_URL.String()
+//	}
+//	proxyurl, _ := url.Parse(bingURL)
 
 func Index(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/" {
@@ -21,11 +25,9 @@ func Index(w http.ResponseWriter, r *http.Request) {
 			helper.UnauthorizedResult(w)
 			return
 		}
-	}
-//	if bingURL == "" {
-//		bingURL = common.BING_URL.String()
-//	}
-//	proxyurl, _ := url.Parse(bingURL)
-	common.NewSingleHostReverseProxy(common.BingURL).ServeHTTP(w, r)
+		common.NewSingleHostReverseProxy(common.BingURL).ServeHTTP(w, r)
+	} else {
+		common.NewSingleHostReverseProxy(common.BING_URL).ServeHTTP(w, r)
+		}
 }
 
