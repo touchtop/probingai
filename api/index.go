@@ -5,8 +5,8 @@ import (
 	"adams549659584/go-proxy-bingai/common"
 	"net/http"
 	"strings"
-	"os"
-	"net/url" 
+//	"os"
+//	"net/url" 
 )
 
 //var bingURL = os.Getenv("BING_PROXY_DM")
