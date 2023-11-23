@@ -1,4 +1,4 @@
-module adams549659584/go-proxy-bingai
+module jokyo3/probingai
 
 go 1.20
 
