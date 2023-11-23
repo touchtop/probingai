@@ -9,7 +9,7 @@ import (
 	"net/url" 
 )
 
-var bingURL = os.Getenv("BING_PROXY_DM")
+//var bingURL = os.Getenv("BING_PROXY_DM")
 
 func Index(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/" {
@@ -22,10 +22,10 @@ func Index(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	if bingURL == "" {
-		bingURL = common.BING_URL.String()
-	}
-	proxyurl, _ := url.Parse(bingURL)
-	common.NewSingleHostReverseProxy(proxyurl).ServeHTTP(w, r)
+//	if bingURL == "" {
+//		bingURL = common.BING_URL.String()
+//	}
+//	proxyurl, _ := url.Parse(bingURL)
+	common.NewSingleHostReverseProxy(common.bingURL).ServeHTTP(w, r)
 }
 
