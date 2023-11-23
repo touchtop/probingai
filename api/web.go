@@ -1,9 +1,9 @@
 package api
 
 import (
-	"adams549659584/go-proxy-bingai/api/helper"
-	"adams549659584/go-proxy-bingai/common"
-	"adams549659584/go-proxy-bingai/web"
+	"jokyo3/probingai/api/helper"
+	"jokyo3/probingai/common"
+	"jokyo3/probingai/web"
 	"net/http"
 )
 
