@@ -14,7 +14,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	
+	"os"
 
 	"github.com/andybalholm/brotli"
 	utls "github.com/refraction-networking/utls"
