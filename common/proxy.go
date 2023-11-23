@@ -345,10 +345,10 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
 		}
 		
-		if strings.Contains(modifiedBodyStr, bingURL.Host) {
+		if strings.Contains(modifiedBodyStr, BingURL.Host) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
 		}
-		if strings.Contains(modifiedBodyStr, sydneyURL.Host) {
+		if strings.Contains(modifiedBodyStr, SydneyURL.Host) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
 		}
 	} else {
@@ -359,10 +359,10 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.String()) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.String(), originalDomain)
 		}
-		if strings.Contains(modifiedBodyStr, bingURL.String()) {
+		if strings.Contains(modifiedBodyStr, BingURL.String()) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.String(), originalDomain)
 		}
-		if strings.Contains(modifiedBodyStr, sydneyURL.String()) {
+		if strings.Contains(modifiedBodyStr, SydneyURL.String()) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.String(), originalDomain)
 		}
 	}
@@ -374,10 +374,10 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 	if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.Host) {
 		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
 	}
-	if strings.Contains(modifiedBodyStr, bingURL.Host) {
+	if strings.Contains(modifiedBodyStr, BingURL.Host) {
 		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
 	}
-	if strings.Contains(modifiedBodyStr, sydneyURL.Host) {
+	if strings.Contains(modifiedBodyStr, SydneyURL.Host) {
 		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
 	}
 
