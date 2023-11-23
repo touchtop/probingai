@@ -26,6 +26,8 @@ var (
 	BING_SYDNEY_URL, _  = url.Parse(BING_SYDNEY_DOMAIN)
 	BING_URL, _         = url.Parse("https://www.bing.com")
 	EDGE_SVC_URL, _     = url.Parse("https://edgeservices.bing.com")
+	bingURL,_	= ""
+	sydneyURL,_	= ""
 	KEEP_REQ_HEADER_MAP = map[string]bool{
 		"Accept":                         true,
 		"Accept-Encoding":                true,
