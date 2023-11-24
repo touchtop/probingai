@@ -348,9 +348,9 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		if strings.Contains(modifiedBodyStr, BingURL.Host) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
 		}
-		if strings.Contains(modifiedBodyStr, SydneyURL.Host) {
-			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
-		}
+	//	if strings.Contains(modifiedBodyStr, SydneyURL.Host) {
+	//		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
+	//	}
 	} else {
 		originalDomain := fmt.Sprintf("%s://%s", originalScheme, originalHost)
 		if strings.Contains(modifiedBodyStr, BING_URL.String()) {
@@ -362,9 +362,9 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		if strings.Contains(modifiedBodyStr, BingURL.String()) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.String(), originalDomain)
 		}
-		if strings.Contains(modifiedBodyStr, SydneyURL.String()) {
-			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.String(), originalDomain)
-		}
+	//	if strings.Contains(modifiedBodyStr, SydneyURL.String()) {
+	//		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.String(), originalDomain)
+	//	}
 	}
 
 	// 对话暂时支持国内网络，而且 Vercel 还不支持 Websocket ，先不用
@@ -377,9 +377,9 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 	if strings.Contains(modifiedBodyStr, BingURL.Host) {
 		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
 	}
-	if strings.Contains(modifiedBodyStr, SydneyURL.Host) {
-		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
-	}
+//	if strings.Contains(modifiedBodyStr, SydneyURL.Host) {
+//		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
+//	}
 
 	// if strings.Contains(modifiedBodyStr, "https://www.bingapis.com") {
 	// 	modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, "https://www.bingapis.com", "https://bing.vcanbb.top")
