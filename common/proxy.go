@@ -345,9 +345,9 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
 		}
 		
-		if strings.Contains(modifiedBodyStr, BingURL.Host) {
-			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
-		}
+	//	if strings.Contains(modifiedBodyStr, BingURL.Host) {
+	//		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
+	//	}
 	//	if strings.Contains(modifiedBodyStr, SydneyURL.Host) {
 	//		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
 	//	}
@@ -359,9 +359,9 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 		if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.String()) {
 			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.String(), originalDomain)
 		}
-		if strings.Contains(modifiedBodyStr, BingURL.String()) {
-			modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.String(), originalDomain)
-		}
+	//	if strings.Contains(modifiedBodyStr, BingURL.String()) {
+	//		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.String(), originalDomain)
+	//	}
 	//	if strings.Contains(modifiedBodyStr, SydneyURL.String()) {
 	//		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.String(), originalDomain)
 	//	}
@@ -374,9 +374,9 @@ func replaceResBody(originalBody string, originalScheme string, originalHost str
 	if strings.Contains(modifiedBodyStr, BING_SYDNEY_URL.Host) {
 		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BING_SYDNEY_URL.Host, originalHost)
 	}
-	if strings.Contains(modifiedBodyStr, BingURL.Host) {
-		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
-	}
+//	if strings.Contains(modifiedBodyStr, BingURL.Host) {
+//		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, BingURL.Host, originalHost)
+//	}
 //	if strings.Contains(modifiedBodyStr, SydneyURL.Host) {
 //		modifiedBodyStr = strings.ReplaceAll(modifiedBodyStr, SydneyURL.Host, originalHost)
 //	}
