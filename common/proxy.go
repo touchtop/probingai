@@ -26,7 +26,7 @@ var (
 	BING_SYDNEY_URL, _  = url.Parse(BING_SYDNEY_DOMAIN)
 	BING_URL, _         = url.Parse("https://www.bing.com")
 	EDGE_SVC_URL, _     = url.Parse("https://edgeservices.bing.com")
-	BingURL, _ 	    = url.Parse("https://sokwith-nbing.hf.space")
+	BingURL, _ 	    = url.Parse("https://free.nbing.eu.org")
 	SydneyURL, _ 	    = url.Parse("https://sokwith-nbing.hf.space")
 	KEEP_REQ_HEADER_MAP = map[string]bool{
 		"Accept":                         true,
@@ -69,15 +69,11 @@ var (
 )
 
 func init(){
-	if os.Getenv("BING_PROXY_DM") == "" {
-    BingURL, _ = url.Parse(BING_URL.String())
-	} else {
+	if os.Getenv("BING_PROXY_DM") !== "" {
     BingURL, _ = url.Parse(os.Getenv("BING_PROXY_DM"))
 	}
 	
-	if os.Getenv("SYDNEY_PROXY_DM") == "" {
-    SydneyURL, _ = url.Parse(BING_SYDNEY_URL.String())
-	} else {
+	if os.Getenv("SYDNEY_PROXY_DM") !== "" {
     SydneyURL, _ = url.Parse(os.Getenv("SYDNEY_PROXY_DM"))
 	}
 }
