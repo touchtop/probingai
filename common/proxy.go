@@ -69,10 +69,10 @@ var (
 )
 
 func init(){
-	if os.Getenv("BING_PROXY_DM") !== "" {
+	if os.Getenv("BING_PROXY_DM") != "" {
     BingURL, _ = url.Parse(os.Getenv("BING_PROXY_DM"))
 	}	
-	if os.Getenv("SYDNEY_PROXY_DM") !== "" {
+	if os.Getenv("SYDNEY_PROXY_DM") != "" {
     SydneyURL, _ = url.Parse(os.Getenv("SYDNEY_PROXY_DM"))
 	}
 }
