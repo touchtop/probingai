@@ -15,6 +15,6 @@ func WebStatic(w http.ResponseWriter, r *http.Request) {
 			helper.UnauthorizedResult(w)
 			return
 		}
-		common.NewSingleHostReverseProxy(common.BING_URL).ServeHTTP(w, r)
+		common.NewSingleHostReverseProxy(common.BingURL).ServeHTTP(w, r)
 	}
 }
