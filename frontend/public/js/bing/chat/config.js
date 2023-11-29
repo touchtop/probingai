@@ -625,7 +625,7 @@ _w['_sydConvTranslation'] = {
   zeroInputSuggestionFallback2: '对于一个预算有限的六口之家来说，会首选哪三款车型？',
   zeroInputSuggestionFallback3: '总结https://nbing.eu.org网站内容并画出网站拓扑',
   zeroInputSuggestionFallback4: '下一流行趋势是什么？我应该在哪里购物可以找到它？',
-  zeroInputSuggestionFallback5: '匿名使用当日数量限制时需要清除缓存再继续，一键重置不能完整清除',
+  zeroInputSuggestionFallback5: '匿名使用当日数量限制时需要自主右上角设置任意Token',
   zeroInputSuggestionFallback6: '创建一个表，帮助我计划接下来两周的就餐',
   zeroInputSuggestionFallback7: '为具有讽刺风格的新社交媒体平台创建一个口号',
   zeroInputSuggestionCategory1: '商店',
